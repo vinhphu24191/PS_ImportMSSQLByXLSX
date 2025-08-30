@@ -1,0 +1,9 @@
+{
+  "RootFolder": "D:\\NVP\\WorkSpace\\WorkSpace_ImportData\\ImportExcel\\data\\NhanSu.Log\\SeoKeywordMetrics",        
+  "Recursive": true,                           
+  "FilePattern": "*.xlsx",                     
+  "Cell": "A1",                                
+  "Sheet": 1,                                  
+  "CreateBackup": true,                        
+  "StopOnError": false                         
+}
