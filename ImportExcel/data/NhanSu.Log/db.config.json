@@ -1,0 +1,53 @@
+﻿{
+  "Database": "NhanSu.Log",
+  "Server": "118.69.197.6",
+  "Port": 1433,
+  "Auth": {
+    "User": "sql_tuyendung",
+    "Password": "Ls@@9109",
+    "IntegratedSecurity": false
+  },
+  "Defaults": {
+    "FilePattern": "*.xlsx",
+	"Recurse": true,//kiểm tra và import hết file có trong thư mục
+	"SkipProcessed": true, //bỏ qua nếu file đã import rồi
+	"SkipMode": "seen",       
+	"ProcessedLogPath": null,
+    "DateFormat": "M/d/yyyy",
+    "TruncateBeforeImport": false,
+    "Mode": "bulk"
+  },
+  "Tables": [
+    {
+      "Name": "SeoKeywordMetrics",
+      "Folder": "SeoKeywordMetrics",
+      "SheetName": null,
+      "TruncateBeforeImport": false, //xóa data bảng trước khi thực hiện import
+      "IdentityInsert": true,
+      "Mode": "bulk",
+      "KeyColumns": ["Keyword","Url"],
+      "Columns": [
+        { "Db": "Keyword",           "Type": "string",  "Excel": "Keyword" },
+        { "Db": "Position",          "Type": "int",     "Excel": "Position" },
+        { "Db": "PreviousPosition",  "Type": "int",     "Excel": "Previous position" },
+        { "Db": "SearchVolume",      "Type": "int",     "Excel": "Search Volume" },
+        { "Db": "KeywordDifficulty", "Type": "int",     "Excel": "Keyword Difficulty" },
+        { "Db": "CPC",               "Type": "double",  "Excel": "CPC" },
+        { "Db": "Url",               "Type": "string",  "Excel": "URL" },
+        { "Db": "Traffic",           "Type": "int",     "Excel": "Traffic" },
+        { "Db": "TrafficPercentage", "Type": "double",  "Excel": "Traffic (%)" },
+        { "Db": "TrafficCost",       "Type": "double",  "Excel": "Traffic Cost" },
+        { "Db": "Competition",       "Type": "double",  "Excel": "Competition" },
+        { "Db": "NumberOfResults",   "Type": "int64",   "Excel": "Number of Results" },
+        { "Db": "Trends",            "Type": "string",  "Excel": "Trends" },
+        { "Db": "Timestamp",         "Type": "date",    "Excel": "Timestamp" },
+        { "Db": "SerpFeatures",      "Type": "string",  "Excel": "SERP Features by Keyword" },
+        { "Db": "KeywordIntent",     "Type": "string",  "Excel": "Keyword Intents" },
+        { "Db": "PositionType",      "Type": "string",  "Excel": "Position Type" },
+        { "Db": "Url_Id",            "Type": "int",     "Excel": "Url_Id" }
+      ],
+      "PreSql": [],
+      "PostSql": []
+    }
+  ]
+}
